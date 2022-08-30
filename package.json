@@ -1,0 +1,26 @@
+{
+  "name": "online-store",
+  "version": "1.0.0",
+  "description": "educational project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ZitsBt/online-store.git"
+  },
+  "author": "ZitsBt",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ZitsBt/online-store/issues"
+  },
+  "homepage": "https://github.com/ZitsBt/online-store#readme",
+  "devDependencies": {
+    "browser-sync": "^2.27.10",
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^8.0.0",
+    "gulp-sass": "^5.1.0",
+    "sass": "^1.54.5"
+  }
+}

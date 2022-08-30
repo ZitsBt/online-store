@@ -1,0 +1,6 @@
+body {
+  background: #ffff00;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
