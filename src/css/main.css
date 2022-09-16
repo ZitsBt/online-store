@@ -6,8 +6,39 @@
   font-weight: 400;
   font-style: normal;
 }
-.txt {
+.txt-normal {
   font-family: lato;
   font-weight: 400;
   font-style: normal;
+}
+
+.container {
+  margin: 0 auto;
+  width: 100%;
+  padding-left: 14.375%;
+  padding-right: 14.375%;
+}
+
+.page-header {
+  height: 75px;
+  background: #222;
+  color: #fff;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+.page-header-wrp {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+.page-header-wrp-btn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.page-header-wrp-btn input {
+  display: none;
 }
