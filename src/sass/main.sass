@@ -6,7 +6,256 @@
   font-weight: 400
   font-style: normal
 
-.txt
+@font-face
+  font-family: lato
+  src: url("../fonts/lato-bold.woff2") format("woff2")
+  src: url("../fonts/lato-bold.woff") format("woff")
+  src: url("../fonts/lato-bold.ttf") format("truetype")
+  font-weight: 700
+  font-style: normal
+
+$bgcolor-header-static: #E8E8E8
+$bgcolor-header-hover: #F16D7F
+$bgcolor-header-active: #919191
+$bgcolor-header-focus: #ff9ca9
+$color-category-menu: #F16D7F
+$color-menu-txt-main: #6F6E6E
+$color-main-header: #F1E4E6
+
+svg
+  display: block
+
+.txt-normal
   font-family: lato
   font-weight: 400
   font-style: normal
+
+.txt-bold
+  font-family: lato
+  font-weight: 700
+  font-style: normal
+
+.container
+  margin: 0 auto
+  width: 100%
+  padding-left: 14.375%
+  padding-right: 14.375%
+
+//======header======
+
+.page-header
+  height: 75px
+  background: #222
+  color: #fff
+  box-sizing: border-box
+  padding-top: 19px
+  padding-bottom: 19px
+
+  &-btn
+    display: flex
+    justify-content: space-between
+
+    &-left
+      display: flex
+      align-items: flex-end
+
+    &-right
+      display: flex
+      align-items: flex-end
+
+  &-search
+    display: flex
+    padding-left: 40px
+    flex-flow: row-reverse
+    position: relative
+
+    &-btn
+      display: block
+      fill: $bgcolor-header-static
+
+      & svg
+        width: 26px
+        height: 26px
+
+      &:hover
+        fill: $bgcolor-header-hover
+
+    &-input
+      background: transparent
+      border: none
+      outline: none
+      width: 0
+      min-width: 0
+      height: 29px
+      box-sizing: border-box
+      position: absolute
+      top: -2px
+      left: 66px
+      padding: 0
+      transition: width 1s ease, padding .2s ease
+
+      &:focus
+        width: 150px
+        outline: 1px $bgcolor-header-static
+        margin-left: 5px
+        padding: 7px
+        color: $bgcolor-header-static
+
+      &:active ~ .page-header-search-btn > svg
+        fill: $bgcolor-header-active
+
+      &:focus ~ .page-header-search-btn > svg
+        fill: $bgcolor-header-focus
+
+  &-menu
+    width: 32px
+    height: 23px
+    display: flex
+    position: relative
+
+    &-input
+      display: none
+
+      &:checked
+        & ~ .page-header-menu-btn > .page-header-menu-icon::before,
+        & ~ .page-header-menu-btn > .page-header-menu-icon::after,
+        & ~ .page-header-menu-btn > .page-header-menu-icon .page-header-menu-icon-build
+          background: $bgcolor-header-focus
+
+        & ~ .page-header-menu-btn > .page-header-menu-icon .page-header-menu-icon-build
+          transform: rotate(135deg)
+          top: -3px
+
+        & ~ .page-header-menu-btn > .page-header-menu-icon::before
+          transform: rotate(-45deg)
+          top: 7px
+          left: 0px
+
+        & ~ .page-header-menu-btn > .page-header-menu-icon::after
+          transform: rotate(45deg)
+          top: -13px
+          left: 0px
+
+        & ~ .page-header-menu-box
+          visibility: visible
+          top: 41px
+
+    &-btn
+      display: flex
+
+      &:hover
+        & .page-header-menu-icon::before,
+        & .page-header-menu-icon::after,
+        & .page-header-menu-icon-build
+          background: $bgcolor-header-hover
+
+      &:active
+        & .page-header-menu-icon::before,
+        & .page-header-menu-icon::after,
+        & .page-header-menu-icon-build
+          background: $bgcolor-header-active
+
+    &-icon
+      display: flex
+      flex-direction: column
+      justify-content: space-between
+
+      &::before,
+      &::after
+        display: block
+        content: ''
+        width: 32px
+        height: 3px
+        background: $bgcolor-header-static
+        transition: all .5s
+        position: relative
+        top: 0
+
+      &-build
+        width: 32px
+        height: 3px
+        background: $bgcolor-header-static
+        transition: all .5s
+        position: relative
+        top: 0
+
+    &-box
+      visibility: hidden
+      position: absolute
+      top: -723px
+      background: #fff
+      min-height: 764px
+      width: 232px
+      transition: all .5s
+      z-index: -1
+
+    &-list
+      list-style-type: none
+      margin: 0
+      padding: 37px 34px
+      position: relative
+
+    &-title
+      text-transform: uppercase
+      font-size: 14px
+      line-height: 17px
+      color: #000000
+
+    &-close
+      fill: $color-menu-txt-main
+      position: absolute
+      right: 17px
+      top: 16px
+
+    &-category
+      padding-top: 20px
+
+      &:nth-of-type(3)
+        padding-top: 24px
+
+      &-title
+        text-transform: uppercase
+        color: $color-category-menu
+        font-size: 14px
+        line-height: 17px
+        text-decoration: none
+
+    &-items
+      list-style-type: none
+      margin: 0
+      padding: 0
+      padding: 12px 0 0 21px
+
+    &-item
+      padding-bottom: 11px
+
+      &:last-child
+        padding-bottom: 0
+
+    &-link
+      text-decoration: none
+      display: block
+      color: $color-menu-txt-main
+
+  &-registraition
+    margin: 0 33px
+    padding: 0
+    border: none
+    outline: none
+    background: transparent
+    fill: $bgcolor-header-static
+
+  &-cart
+    padding: 0
+    border: none
+    outline: none
+    background: transparent
+    fill: $bgcolor-header-static
+
+//======main header======
+
+.main
+
+  &-header
+    min-height: 764px
+    // background: $color-main-header
